@@ -12,7 +12,7 @@ $(document).ready(function() {
                 dataType: 'json',
                 success: function(responseUser) {
                     $('#gh-img-url').attr('src', responseUser.avatar_url);
-                    $('#gh-user').text(responseUser.name);
+                    $('#gh-user').text(responseUser.name ?? responseUser.login);
                     $('#gh-user').attr('href', responseUser.html_url);
                     $('.error').hide();
                 }
@@ -23,6 +23,9 @@ $(document).ready(function() {
                 dataType: 'json',
                 success: function(responseRepositories) {
                     repositories = [];
+                    if (responseRepositories.length == 0) {
+                        listRepositories(repositories, options);
+                    }
                     responseRepositories.forEach((repo) => {
                         $.ajax({
                             url: `https://api.github.com/repos/${username}/${repo.name}/commits`,
@@ -50,7 +53,6 @@ $(document).ready(function() {
                     });
                 },
                 error: function(data){
-                    $('.spin-load').hide();
                     $('.repos ul').empty();
                     $('.user-repos-area').addClass('hidden');
                     $('.error').fadeIn(500);
