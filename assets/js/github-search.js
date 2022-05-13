@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-    const TOKEN = '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';
     var repositories = [];
     var options = {  name: null, archived: false, forked: false, orderBy: 'name asc' };
 
@@ -11,9 +10,6 @@ $(document).ready(function() {
                 url: `https://api.github.com/users/${username}`,
                 type: 'GET',
                 dataType: 'json',
-                headers: {
-                    'Authorization': `token ${TOKEN}`
-                },
                 success: function(responseUser) {
                     $('#gh-img-url').attr('src', responseUser.avatar_url);
                     $('#gh-user').text(responseUser.name);
@@ -25,9 +21,6 @@ $(document).ready(function() {
                 url: `https://api.github.com/users/${username}/repos`,
                 type: 'GET',
                 dataType: 'json',
-                headers: {
-                    'Authorization': `token ${TOKEN}`
-                },
                 success: function(responseRepositories) {
                     repositories = [];
                     responseRepositories.forEach((repo) => {
