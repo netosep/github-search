@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #1a1e24;
+}
+
+body::-webkit-scrollbar {
+    width: .6rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1a1e24;
+}
+  
+body::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #25767B;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.active {
+    background-color: #064e14 !important;
+    border: 1px solid #6e7074 !important;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .5rem;
+    margin: 6rem 1rem 3rem 1rem;
+}
+
+.container .title {
+    text-align: center;
+    font-size: 3rem;
+    margin: 1rem;
+    padding: .5rem;
+    color: #f6f6f6;
+}
+
+.container .search-box {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    margin-top: 1rem;
+}
+
+.search-box .input,
+.search-box button {
+    outline: none;
+    margin: .3rem;
+    font-size: 12pt;
+    border-radius: .4rem;
+    border: 1px solid #3f444b;
+    transition: .3s;
+}
+
+.search-box .input {
+    display: flex;
+    align-items: center;
+    padding: .15rem;
+    width: 50%;
+    background-color: #010409;
+    color: #f6f6f6;
+}
+
+.search-box button:hover,
+.search-box .input:hover {
+    border: 1px solid #636972;
+}
+
+.search-box .input i {
+    margin: .1rem .7rem;
+}
+
+.search-box .input input {
+    font-size: 12pt;
+    padding: .6rem;
+    width: 100%;
+    background-color: #010409;
+    outline: none;
+    border: none;
+    color: #f6f6f6;
+}
+
+.search-box button {
+    padding: .6rem;
+    width: 5%;
+    background-color: #238636;
+    color: #fff;
+    cursor: pointer;
+}
+
+.container .error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    margin: .5rem;
+    padding: .5rem;
+    font-size: 22pt;
+    text-align: center;
+    color: #f6f6f6;
+}
+
+.container .error i,
+.container .error span {
+    width: 100%;
+    margin: .5rem;
+}
+
+.container .user-repos-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    width: 100%;
+}
+
+.user-repos-area .profile {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: .5rem;
+    width: 20%;
+    margin: .5rem;
+}
+
+.user-repos-area .profile img {
+    width: 3.5rem;
+    border-radius: 50%;
+    margin: .3rem;
+}
+
+.user-repos-area .profile a {
+    color: #f6f6f6;
+    font-size: 14pt;
+    margin: .3rem;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.user-repos-area .profile a:hover {
+    color: #cccccc;
+}
+
+.user-repos-area .filters {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 35%;
+}
+
+.filters .filter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem;
+}
+
+.filters .filter input[type="text"],
+.filters .filter button {
+    margin: .3rem;
+}
+
+.filters .filter .search {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    background-color: #010409;
+    color: #fff;
+    margin: .3rem;
+    border: 1px solid #3f444b;
+    border-radius: .4rem;
+    transition: .3s;
+    font-size: 9pt;
+}
+
+.filter .search:hover {
+    border: 1px solid #636972;
+}
+
+.filter .search i {
+    margin: .1rem .7rem;
+}
+
+.filter .search input[type="text"] {
+    outline: none;
+    padding: .3rem;
+    font-size: 9pt;
+    width: 100%;
+    border: none;
+    color: #fff;
+    background-color: #010409;
+}
+
+.filters .filter .buttons {
+    display: flex;
+}
+
+.filter .buttons button {
+    background-color: #238636;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border-radius: .3rem;
+    padding: .3rem .6rem;
+    font-size: 12pt;
+    border: 1px solid #3f444b;
+    font-size: 13pt;
+    transition: .3s;
+}
+
+.filter .buttons button:hover {
+    border: 1px solid #636972;
+}
+
+.repos {
+    width: 100%;
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.repos ul {
+    width: 57%;
+    list-style-type: none;
+}
+
+.repos ul li:first-child {
+    padding: .5rem 1rem;
+    margin: .5rem;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.repos ul li {
+    border: 1px solid rgb(78, 78, 78);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2.5rem;
+    margin: .5rem;
+    color: #fff;
+    font-size: 12pt;
+    border-radius: .5rem;
+}
+
+.repos ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.repos ul li a:hover {
+    color: #b8b8b8;
+}
+
+.repos ul li a span {
+    margin-left: .5rem;
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 100%;
+        margin: 5rem 1rem 2rem 1rem;
+    }
+
+    .filters .filter {
+        flex-direction: column;
+    }
+
+    .filters .filter .search {
+        width: 100%;
+    }
+
+    .repos ul li:first-child {
+        font-size: 12pt;
+    }
+
+    .repos ul li {
+        font-size: 11pt;
+        padding: .5rem 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0;
+    }
+
+    .container .title {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    .container .search-box .input {
+        width: 100%;
+    }
+    .container .search-box button {
+        width: 15%;
+    }
+
+    .user-repos-area {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .user-repos-area .profile {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .user-repos-area .profile img {
+        width: 2rem;
+    }
+
+    .user-repos-area .filters {
+        width: 100% !important;
+    }
+
+    .repos ul {
+        width: 100% !important;
+    }
+
+    .repos ul li {
+        padding: .5rem 2.5rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    /* .user-repos-area .profile {
+        width: 30%;
+    } */
+    .search-box .input {
+        width: 60%;
+    }
+
+    .user-repos-area .filters {
+        width: 45%;
+    }
+
+    .repos ul {
+        width: 68%;
+    }
+}

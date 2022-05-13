@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Search</title>
+    <link rel="shortcut icon" href="./assets/img/github_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">
+            <i class="fab fa-github"></i> Github Search
+        </h1>
+        <div class="search-box">
+            <div class="input">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" value="netosep" placeholder="Github username...">
+            </div>
+            <button type="button" id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <div class="error" style="display: none;">
+            <i class="far fa-frown fa-3x"></i>
+            <span id="error-msg"></span>
+        </div>
+
+        <div class="user-repos-area hidden">
+            <div class="profile">
+                <img id="gh-img-url" src="./assets/img/user.jpg">
+                <a href="#" target="_blank" id="gh-user">User username</a>
+            </div>
+
+            <div class="filters">
+                <div class="filter">
+                    <div class="search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="repo-name" placeholder="Repository name...">
+                    </div>
+                    <div class="buttons">
+                        <button type="button" title="Archived" id="archived">
+                            <i class="fas fa-archive"></i>
+                        </button>
+                        <button type="button" title="Forked" id="forked">
+                            <i class="fas fa-code-branch"></i>
+                        </button>
+                        <button type="button" title="Sort by name" id="order-by-name">
+                            <i class="fas fa-sort-alpha-down"></i>
+                        </button>
+                        <button type="button" title="Sort by date" id="order-by-date">
+                            <i class="fas fa-sort-numeric-up"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="repos">
+            <ul></ul>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/github-search.js"></script>
+</body>
+</html>
