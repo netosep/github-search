@@ -50,6 +50,7 @@ $(document).ready(function() {
                     });
                 },
                 error: function(data){
+                    $('.spin-load').hide();
                     $('.repos ul').empty();
                     $('.user-repos-area').addClass('hidden');
                     $('.error').fadeIn(500);
@@ -61,8 +62,15 @@ $(document).ready(function() {
         }
     });
 
-    // iniciando o app com o usuário netosep
+    // initialize the application
     $('#search-btn').click();
+
+    $('#username').keypress(function(event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13') { // enter keycode
+            $('#search-btn').click(); 
+        }
+    });
 
     $('#repo-name').on('input', function() {
         options.name = $(this).val();
