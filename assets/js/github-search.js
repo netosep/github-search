@@ -28,9 +28,6 @@ $(document).ready(function() {
                             url: `https://api.github.com/repos/${username}/${repo.name}/commits`,
                             type: 'GET',
                             dataType: 'json',
-                            headers: {
-                                'Authorization': `token ${TOKEN}`
-                            },
                             success: function(responseCommits) {
                                 repositories.push({
                                     name: repo.name,
